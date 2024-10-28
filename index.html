@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-br"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Teste de Miopia</title> 
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7ff;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #005b96;
+        }
+        .question {
+            margin: 15px 0;
+        }
+        .result {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #005b96;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #007bbd;
+        }
+    </style> 
+ </head> 
+ <body> 
+  <h1>Teste de Miopia</h1> 
+  <div id="quiz"> 
+   <form id="miopiaForm"> 
+    <div class="question"> 
+     <p>1. Você tem dificuldade para ver objetos à distância, como placas de rua?</p> <label><input type="radio" name="q1" value="1"> Sim</label> <label><input type="radio" name="q1" value="0"> Não</label> 
+    </div> 
+    <div class="question"> 
+     <p>2. Sente dores de cabeça com frequência após atividades que exigem foco visual?</p> <label><input type="radio" name="q2" value="1"> Sim</label> <label><input type="radio" name="q2" value="0"> Não</label> 
+    </div> 
+    <div class="question"> 
+     <p>3. Já notou que precisa apertar os olhos para ver objetos distantes?</p> <label><input type="radio" name="q3" value="1"> Sim</label> <label><input type="radio" name="q3" value="0"> Não</label> 
+    </div> 
+    <div class="question"> 
+     <p>4. Você precisa sentar-se próximo ao quadro ou à televisão para ver melhor?</p> <label><input type="radio" name="q4" value="1"> Sim</label> <label><input type="radio" name="q4" value="0"> Não</label> 
+    </div> 
+    <div class="question"> 
+     <p>5. Sente desconforto visual ou cansaço nos olhos ao usar dispositivos digitais?</p> <label><input type="radio" name="q5" value="1"> Sim</label> <label><input type="radio" name="q5" value="0"> Não</label> 
+    </div> 
+    <div class="question"> 
+     <p>6. Alguém na sua família tem diagnóstico de miopia?</p> <label><input type="radio" name="q6" value="1"> Sim</label> <label><input type="radio" name="q6" value="0"> Não</label> 
+    </div> 
+    <div class="question"> 
+     <p>7. Passa muitas horas por dia realizando atividades de leitura ou uso de telas?</p> <label><input type="radio" name="q7" value="1"> Sim</label> <label><input type="radio" name="q7" value="0"> Não</label> 
+    </div> 
+    <div class="question"> 
+     <p>8. Já recebeu um diagnóstico prévio de visão "embaçada" para objetos distantes?</p> <label><input type="radio" name="q8" value="1"> Sim</label> <label><input type="radio" name="q8" value="0"> Não</label> 
+    </div> 
+    <div class="question"> 
+     <p>9. Precisa usar óculos para atividades como dirigir ou assistir a filmes?</p> <label><input type="radio" name="q9" value="1"> Sim</label> <label><input type="radio" name="q9" value="0"> Não</label> 
+    </div> 
+    <div class="question"> 
+     <p>10. Sente que a sua visão está piorando gradualmente com o tempo?</p> <label><input type="radio" name="q10" value="1"> Sim</label> <label><input type="radio" name="q10" value="0"> Não</label> 
+    </div> <button type="button" onclick="calcularResultado()">Ver Resultado</button> 
+   </form> 
+   <div id="resultado" class="result"></div> 
+  </div> 
+  <script>
+        function calcularResultado() {
+            let pontos = 0;
+            const respostas = document.querySelectorAll('input[type="radio"]:checked');
+            respostas.forEach((resposta) => {
+                pontos += parseInt(resposta.value);
+            });
+            
+            const resultadoDiv = document.getElementById("resultado");
+            if (pontos <= 3) {
+                resultadoDiv.textContent = "Risco baixo de miopia. Continue observando sua visão.";
+            } else if (pontos <= 6) {
+                resultadoDiv.textContent = "Risco moderado de miopia. Considere visitar um oftalmologista.";
+            } else {
+                resultadoDiv.textContent = "Alto risco de miopia. Procure um especialista para uma avaliação completa.";
+            }
+        }
+    </script> 
+  <div style="text-align: center;">
+  <h2>Vídeo do YouTube</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/GZnFkkaAAzM?si=jHwdq4f3BzXslnYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+
+
+  <p style="font-size: small; margin-top: 10px;">
+    Desenvolvido por mim, Andrey, com base em miopia, em estudos pesquisados e comprovados.
+  </p>
+</body></html>
